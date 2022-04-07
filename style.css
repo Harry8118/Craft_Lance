@@ -184,7 +184,7 @@ p {
 }
 .main_section-textbox h1 {
   font-weight: 400;
-  font-size: calc(18px + (30 + 30 * 0.4) * ((100vw - 360px) / 1280));
+  font-size: calc(18px + (18 + 18 * 0.4) * ((100vw - 360px) / 1280));
   color: var(--black);
   white-space: nowrap;
   margin-bottom: 10px;
@@ -195,7 +195,7 @@ p {
   color: var(--black);
   margin-bottom: 15px;
   line-height: 1.5;
-  max-width: calc(300px + (500 + 500 * 0.5) * ((100vw - 360px) / 1280));
+  max-width: calc(330px + (200 + 200 * 1.6) * ((100vw - 360px) / 1280));
 }
 
 .main_section-container {
@@ -277,7 +277,7 @@ p {
   position: absolute;
   top: 28%;
   color: var(--white);
-  font-size: calc(18px + (30 + 30 * 0.4) * ((100vw - 360px) / 1280));
+  font-size: calc(18px + (18 + 18 * 0.4) * ((100vw - 360px) / 1280));
   font-weight: 300;
 }
 
@@ -374,7 +374,8 @@ p {
   padding-left: 5px;
 }
 
-.pachage_section-container {
+/******************** service_package-section *********************/
+.package_section-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -387,7 +388,7 @@ p {
 }
 
 .package_section-title h2 {
-  font-size: calc(18px + (30 + 30 * 0.4) * ((100vw - 360px) / 1280));
+  font-size: calc(18px + (18 + 18 * 0.4) * ((100vw - 360px) / 1280));
   font-weight: 300;
   color: var(--black);
 }
@@ -434,34 +435,195 @@ p {
   margin-left: -2px;
 }
 
-/* {
+#community_btn,
+#business_btn {
+  background: #fff;
+}
+
+#community_btn:hover,
+#community_btn:focus,
+#community_btn:active,
+#business_btn:hover,
+#business_btn:focus,
+#business_btn:active {
+  background: var(--basicgreen);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.serviceContainer {
+  margin: 32px 0 32px 0;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service_card {
+  position: relative;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 230px;
+  height: auto;
+  border: 1px solid var(--whitesmoke);
+  padding: 16px;
+}
+
+.service_card-topline {
+  position: absolute;
+  top: 0;
+  margin: 0;
+}
+
+.service_card-middlelineR {
+  margin: 0;
+  position: absolute;
+  top: 32%;
+  left: 72%;
+  width: 29%;
+}
+
+.service_card-middlelineL {
+  margin: 0;
+  position: absolute;
+  top: 32%;
+  right: 72%;
+  width: 29%;
+}
+
+.chacked_icon {
+  color: var(--snow);
+  background-color: var(--basicgreen);
+  border-radius: 100%;
+  font-size: 12px;
+}
+
+.unchecked_icon {
+  color: var(--snow);
+  background-color: gray;
+  border-radius: 100%;
+  font-size: 12px;
+}
+
+.service_button {
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: 400;
+  background: #fff;
+  cursor: pointer;
+  width: 120px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 0.1em grey;
+}
+
+.service_title {
+  padding: 6px 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.service_button:hover,
+.service_button:focus,
+.service_button:active {
+  background: var(--basicgreen);
+  color: #fff;
+}
+
+.service_price {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
-  z-index: 2;
-  border-radius: 10px;
-  background-color: #4ca368;
-  font-size: 10px;
-} */
-
-#div {
-  width: 100%;
+  width: 100px;
   height: 100px;
+  border: 2px solid var(--basicgreen);
+  border-radius: 50%;
+  padding: 8px;
 }
 
-/* *************card_section *****************/
+.service_price span {
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.benefits {
+  margin: 12px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* *************card_section*****************/
+
+#card_section {
+  background: var(--snow);
+  /* padding: 36px 16px; */
+}
+
 #card_section-title {
   text-align: center;
-  font-size: calc(18px + (30 + 30 * 0.4) * ((100vw - 360px) / 1280));
+  font-size: calc(18px + (18 + 18 * 0.8) * ((100vw - 360px) / 1280));
   font-weight: 300;
   color: var(--black);
+  padding-top: 32px;
 }
 
-/* *************card_section end*****************/
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(1);
+  gap: 24px;
+  margin-top: 24px;
+  padding: 16px;
+  justify-content: center;
+}
 
-/********************footer section*************/
+.card_box {
+  width: 280px;
+  padding: 16px;
+  height: auto;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 0 0.2em grey;
+}
+
+.card_title {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.card_box-icon {
+  font-size: 50px;
+  color: var(--basicgreen);
+}
+
+.card_box:hover {
+  background: var(--basicgreen);
+  color: var(--white);
+}
+.card_box:hover .card_box-icon {
+  background: var(--basicgreen);
+  color: var(--white);
+}
+
+.card_description {
+  margin-top: 24px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+hr {
+  width: 64px;
+  margin: 16px 38%;
+}
+
+/********************footer and subfooter *************/
 footer {
   background-color: var(--whitesmoke);
 }
@@ -559,7 +721,7 @@ footer {
   margin-bottom: 5px;
 }
 
-/***************** @media-scree  ******************/
+/***************** @media-scree ******************/
 
 @media screen and (min-width: 767.98px) {
   /* navigation menu */
@@ -595,6 +757,7 @@ footer {
     flex-direction: row;
   }
 
+  /***************** header *************/
   .header_contact-box a:nth-child(1) {
     margin: 8px;
   }
@@ -611,8 +774,22 @@ footer {
     font-size: 16px;
   }
 
+  /*************** second_main-section ********************/
+
+  .main_section-textbox h1 {
+    font-size: calc(18px + (20 + 20 * 0.4) * ((100vw - 360px) / 1280));
+  }
+
+  .main_section-textbox p {
+    max-width: calc(350px + (350 + 300 * 0.2) * ((100vw - 360px) / 1280));
+  }
+
   .signup_item i {
     font-size: 18px;
+  }
+
+  .main_section-signup h2 {
+    font-size: calc(28px + (20 + 20 * 0.4) * ((100vw - 360px) / 1280));
   }
 
   .signup_item {
@@ -620,6 +797,15 @@ footer {
   }
   .signup_arrow-box {
     font-size: 24px;
+  }
+
+  /*************** serviceContainer *************/
+  .serviceContainer {
+    flex-direction: row;
+  }
+
+  .package_section-title h2 {
+    font-size: calc(28px + (20 + 20 * 0.4) * ((100vw - 360px) / 1280));
   }
 
   .product_btn {
@@ -636,11 +822,25 @@ footer {
     font-size: 11px;
   }
 
-  .subfuoter_container {
-    flex-direction: row;
-    justify-content: space-between;
-    max-height: 120px;
+  /************* card section ***************/
+
+  #card_section {
+    padding: 36px 32px;
   }
+
+  .grid_container {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 24px;
+    padding: 36px;
+    justify-items: center;
+  }
+
+  #card_section-title {
+    font-size: calc(28px + (20 + 20 * 0.4) * ((100vw - 360px) / 1280));
+  }
+
+  /* footer and subfooter */
 
   .footer_content {
     flex-direction: row;
@@ -685,6 +885,12 @@ footer {
     height: 38.5px;
   }
 
+  .subfuoter_container {
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 120px;
+  }
+
   .subfooter_logo-box a img {
     margin: 0;
   }
@@ -696,7 +902,7 @@ footer {
   }
 }
 
-/********************** @media-screen 1280****************** */
+/********************** @media-screen 1280 ****************** */
 
 @media screen and (min-width: 1279.98px) {
   .header_social-links ul li a {
@@ -706,6 +912,10 @@ footer {
   .header_contact-box {
     font-weight: 300;
     font-size: 18px;
+  }
+
+  .header_logo-box a {
+    font-size: 30px;
   }
 
   .header_contact-box a:nth-child(1) {
@@ -734,8 +944,15 @@ footer {
   }
 
   .main_section-textbox h1 {
+    font-size: 48px;
     white-space: pre-wrap;
   }
+
+  .main_section-textbox p {
+    max-width: 870px;
+    font-size: 16px;
+  }
+
   .form_section-box form input {
     width: 200px;
     height: 60px;
@@ -752,6 +969,14 @@ footer {
     font-size: 16px;
   }
 
+  .main_section-signup h2 {
+    font-size: 48px;
+  }
+
+  .serviceContainer {
+    margin: 64px 0 64px 0;
+  }
+
   .product_btn {
     width: 185px;
     height: 28px;
@@ -764,5 +989,32 @@ footer {
     top: 1px;
     left: 46%;
     font-size: 13px;
+  }
+
+  #card_section-title {
+    padding: 50px 0 50px 0;
+    font-size: 48px;
+  }
+
+  .card_description {
+    line-height: 22px;
+  }
+  #card_section {
+    padding-bottom: 50px;
+  }
+
+  .card_box {
+    width: 270px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .grid_container {
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    gap: 36px;
+    justify-content: center;
   }
 }

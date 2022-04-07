@@ -1,9 +1,16 @@
 import { platformInformation } from "./module/platformInformation.js";
-import { serviceInfo } from "./module/serviceInformation.js";
+import {
+  communityServices,
+  businessServices,
+} from "./module/serviceInformation.js";
+
+const cardSection = document.getElementById("card_section-wrap");
+const packageSectionContainer = document.getElementById("package_section");
+const communitiySetrvicesBtn = document.getElementById("community_btn");
+const businessServicesBtn = document.getElementById("business_btn");
 
 /* Open and Close the Menu */
 let menuPosition = "close";
-const menuBurger = document.getElementById("menu-burger");
 const lines = document.querySelectorAll(".burger-line");
 document.getElementById("menu").addEventListener("click", (evt) => {
   if (menuPosition === "close") {
@@ -39,28 +46,133 @@ function burgerAnimation(
   lines[2].style.transform = transformThirdLine;
 }
 
-// cardPlatform-HTML
-const div = document.getElementById("card_section-title");
-const cardDiv = document.createElement("div");
-cardDiv.classList.add("card_item-wrapper");
+// Card list
+const cardList = platformInformation.map(
+  (card) =>
+    `
+     <li class="card_box">
+       ${card.icon}
+       <hr />
+       <h2 class="card_title">${card.title.toUpperCase()}</h2>
+       <p class="card_description">${card.description}</p>
+     </li>
+   `,
+);
 
-const generateCard = (icon, title, description) => {
-  return `
-   <div class="card_item-box">
-       <div cass="card_img">${icon}</div>
-       <h2 class="card_title">${title.toUpperCase()}</h2>
-       <p class="card_description">${description}</p>
-   </div>
- 
-   `;
+const generateCardList = () => {
+  if (platformInformation.length > 0) {
+    const ul = document.createElement("ul");
+    ul.classList.add("grid_container");
+
+    ul.innerHTML = cardList.join(" ");
+    cardSection.append(ul);
+  }
 };
+generateCardList();
 
-const cardHTML = platformInformation
-  .map((card) => {
-    return generateCard(card.icon, card.title, card.description);
-  })
-  .join("");
+// Services
+const communityService = communityServices.map(
+  (service) =>
+    `
+     <div class="service_card">
+      ${service.middleHrL}
+      ${service.middleHrR}
+      ${service.elem}
+       <h2 class="service_title">${service.title}</h2>
+       <p class="service_price">
+         <span>${service.price}</span>
+         <span style="font-style:italic; font-size: 10px;">per month</span>
+       </p>
+       <div class="benefits">
+       ${
+         service.keyword
+           ? `<span class="isbenefit">${service.keyword}</span>`
+           : `<span class="nobenefit"> 20 Keyword (free)</span>`
+       }
+       ${
+         service.tracking
+           ? `<span class="isbenefit">${service.tracking}</span>`
+           : `<span class="nobenefit">No Time Tracking (free)</span>`
+       }
+       ${
+         service.hour
+           ? `<span class="isbenefit">${service.hour}</span>`
+           : `<span class="nobenefit"> 230 - Man Hour (free)</span>`
+       }
+       ${
+         service.newsLetter
+           ? `<span class="isbenefit">${service.newsLetter}</span class="nobenefit">`
+           : `<span>News Letter (free)</span>`
+       }
+       </div>
+       <button class="service_button">FREE NOW</button>
+     </div>
+   `,
+);
 
-cardDiv.innerHTML = cardHTML;
+const businessService = businessServices.map((service) => {
+  return `
+     <div class="service_card">
+       ${service.middleHrL}
+       ${service.middleHrR}
+       ${service.elem}
+       <h2 class="service_title">${service.title}</h2>
+       <p class="service_price">
+         <span>${service.price}</span>
+         <span style="font-style:italic; font-size: 10px;">per month</span>
+       </p>
+       <div class="benefits">
+         ${
+           service.keyword
+             ? `<span class="isbenefit">${service.chackIcon} ${service.keyword}</span>`
+             : `<span class="nobenefit">20 Keyword (free)</span>`
+         }
+         ${
+           service.tracking
+             ? `<span class="isbenefit">${service.uncheckedIcon} ${service.tracking}</span>`
+             : `<span class="nobenefit">No Time Tracking (free)</span>`
+         }
+         ${
+           service.hour
+             ? `<span class="isbenefit">${service.hour}</span>`
+             : `<span class="nobenefit">${service.chackIcon} 230 - Man Hour (free)</span>`
+         }
+         ${
+           service.newsLetter
+             ? `<span class="isbenefit">${service.chackIcon} ${service.newsLetter}</span class="nobenefit">`
+             : `<span></span> News Letter (free)</span>`
+         }
+       </div>
+       <button class="service_button">FREE NOW</button>
+     </div>
+   `;
+});
 
-div.insertAdjacentElement("afterend", cardDiv);
+window.onload = function () {
+  const commServContainer = document.createElement("div");
+  const busServContainer = document.createElement("div");
+
+  communitiySetrvicesBtn.onclick = () => {
+    busServContainer.style.display = "none";
+
+    if (communityServices.length > 0) {
+      commServContainer.classList.add("serviceContainer");
+      commServContainer.style.display = "flex";
+
+      commServContainer.innerHTML = communityService.join(" ");
+      packageSectionContainer.append(commServContainer);
+    }
+  };
+
+  businessServicesBtn.onclick = () => {
+    commServContainer.style.display = "none";
+
+    if (businessService.length > 0) {
+      busServContainer.classList.add("serviceContainer");
+      busServContainer.style.display = "flex";
+
+      busServContainer.innerHTML = businessService.join(" ");
+      packageSectionContainer.append(busServContainer);
+    }
+  };
+};
