@@ -75,9 +75,7 @@ const communityService = communityServices.map(
   (service) =>
     `
      <div class="service_card">
-      ${service.middleHrL}
-      ${service.middleHrR}
-      ${service.elem}
+       <hr class="service_card-topline">
        <h2 class="service_title">${service.title}</h2>
        <p class="service_price">
          <span>${service.price}</span>
@@ -106,6 +104,7 @@ const communityService = communityServices.map(
        }
        </div>
        <button class="service_button">FREE NOW</button>
+       <span class="service_card-middleline"></span>
      </div>
    `,
 );
@@ -113,9 +112,7 @@ const communityService = communityServices.map(
 const businessService = businessServices.map((service) => {
   return `
      <div class="service_card">
-       ${service.middleHrL}
-       ${service.middleHrR}
-       ${service.elem}
+       <hr class="service_card-topline">
        <h2 class="service_title">${service.title}</h2>
        <p class="service_price">
          <span>${service.price}</span>
@@ -124,26 +121,27 @@ const businessService = businessServices.map((service) => {
        <div class="benefits">
          ${
            service.keyword
-             ? `<span class="isbenefit">${service.chackIcon} ${service.keyword}</span>`
+             ? `<span class="isbenefit">${service.keyword}</span>`
              : `<span class="nobenefit">20 Keyword (free)</span>`
          }
          ${
            service.tracking
-             ? `<span class="isbenefit">${service.uncheckedIcon} ${service.tracking}</span>`
+             ? `<span class="isbenefit">${service.tracking}</span>`
              : `<span class="nobenefit">No Time Tracking (free)</span>`
          }
          ${
            service.hour
              ? `<span class="isbenefit">${service.hour}</span>`
-             : `<span class="nobenefit">${service.chackIcon} 230 - Man Hour (free)</span>`
+             : `<span class="nobenefit">230 - Man Hour (free)</span>`
          }
          ${
            service.newsLetter
-             ? `<span class="isbenefit">${service.chackIcon} ${service.newsLetter}</span class="nobenefit">`
+             ? `<span class="isbenefit">${service.newsLetter}</span class="nobenefit">`
              : `<span></span> News Letter (free)</span>`
          }
        </div>
        <button class="service_button">FREE NOW</button>
+       <span class="service_card-middleline"></span>
      </div>
    `;
 });
@@ -175,4 +173,5 @@ window.onload = function () {
       packageSectionContainer.append(busServContainer);
     }
   };
+  businessServicesBtn.click();
 };
