@@ -1,9 +1,3 @@
-// import { platformInformation } from "./module/platformInformation.js";
-// import {
-//   communityServices,
-//   businessServices,
-// } from "./module/serviceInformation.js";
-
 const platformInformation = [
   {
     icon: `<i class="card_box-icon  fa-solid fa-book"></i>`,
