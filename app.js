@@ -1,8 +1,93 @@
-import { platformInformation } from "./module/platformInformation.js";
-import {
-  communityServices,
-  businessServices,
-} from "./module/serviceInformation.js";
+// import { platformInformation } from "./module/platformInformation.js";
+// import {
+//   communityServices,
+//   businessServices,
+// } from "./module/serviceInformation.js";
+
+const platformInformation = [
+  {
+    icon: `<i class="card_box-icon  fa-solid fa-book"></i>`,
+    title: "Community Edition",
+    description:
+      "Visually explore your data through a free-form drag-and-drop canvas, a broad range of modern data visualizations, and an easy-to-use report authoring experience.",
+  },
+  {
+    icon: `<i class="card_box-icon  fa-solid fa-book"></i>`,
+    title: "Community Edition",
+    description:
+      "Visually explore your data through a free-form drag-and-drop canvas, a broad range of modern data visualizations, and an easy-to-use report authoring experience.",
+  },
+  {
+    icon: `<i class="card_box-icon  fa-solid fa-book"></i>`,
+    title: "Community Edition",
+    description:
+      "Visually explore your data through a free-form drag-and-drop canvas, a broad range of modern data visualizations, and an easy-to-use report authoring experience.",
+  },
+  {
+    icon: `<i class="card_box-icon  fa-solid fa-book"></i>`,
+    title: "Community Edition",
+    description:
+      "Visually explore your data through a free-form drag-and-drop canvas, a broad range of modern data visualizations, and an easy-to-use report authoring experience.",
+  },
+  {
+    icon: `<i class="card_box-icon  fa-solid fa-book"></i>`,
+    title: "Community Edition",
+    description:
+      "Visually explore your data through a free-form drag-and-drop canvas, a broad range of modern data visualizations, and an easy-to-use report authoring experience.",
+  },
+  {
+    icon: `<i class="card_box-icon  fa-solid fa-book"></i>`,
+    title: "Community Edition",
+    description:
+      "Visually explore your data through a free-form drag-and-drop canvas, a broad range of modern data visualizations, and an easy-to-use report authoring experience.",
+  },
+  {
+    icon: `<i class="card_box-icon  fa-solid fa-book"></i>`,
+    title: "Community Edition",
+    description:
+      "Visually explore your data through a free-form drag-and-drop canvas, a broad range of modern data visualizations, and an easy-to-use report authoring experience.",
+  },
+  {
+    icon: `<i class="card_box-icon  fa-solid fa-book"></i>`,
+    title: "Community Edition",
+    description:
+      "Visually explore your data through a free-form drag-and-drop canvas, a broad range of modern data visualizations, and an easy-to-use report authoring experience.",
+  },
+];
+
+const businessServices = [
+  {
+    title: "BASIC",
+    price: "$159",
+    keyword: "20 Keyword (free)",
+    tracking: "No Time Tracking (free)",
+    newsLetter: "News Letter (free)",
+  },
+];
+
+const communityServices = [
+  {
+    title: "BASIC",
+    price: "$59",
+    tracking: "No Time Tracking (free)",
+    newsLetter: "News Letter (free)",
+  },
+  {
+    title: "STANDARD",
+    price: "$79",
+    keyword: "20 Keyword (free)",
+    hour: "230 - Man Hour (free)",
+    newsLetter: "News Letter (free)",
+  },
+  {
+    title: "UNLIMITED",
+    price: "$99",
+    keyword: "20 Keyword (free)",
+    tracking: "No Time Tracking (free)",
+    hour: "230 - Man Hour (free)",
+    newsLetter: "News Letter (free)",
+  },
+];
 
 const cardSection = document.getElementById("card_section-wrap");
 const packageSectionContainer = document.getElementById("package_section");
